@@ -7,6 +7,7 @@ import Card from '../components/Card.jsx'
 const Dashboard = ({products}) => {
     const [productsState, setproductsState] =useState(products)
   return (
+    <>
     <div>
       <Navbar/>
       <div className='d-flex flex-wrap me-5 ms-5'>
@@ -33,6 +34,7 @@ const Dashboard = ({products}) => {
       </div>
 
     </div>
+    </>
   )
 }
 
