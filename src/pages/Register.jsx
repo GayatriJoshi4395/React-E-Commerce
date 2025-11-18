@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = ({ setIsRegistered }) => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   function handleRegister(event) {
     event.preventDefault();
@@ -16,6 +18,7 @@ const Register = ({ setIsRegistered }) => {
     console.log(payload, "payload");
     localStorage.setItem("Grocery Shop User", JSON.stringify(payload));
     setIsRegistered(true);
+    navigate('/')
   }
   return (
     <div className="container w-50 mx-auto border shadow mt-5 rounded-2 p-3">
@@ -72,6 +75,8 @@ const Register = ({ setIsRegistered }) => {
         <button type="submit" className="btn btn-primary">
           Submit
         </button>
+        <br />
+        <Link to='/'>Already Registerd </Link>
       </form>
     </div>
   );
